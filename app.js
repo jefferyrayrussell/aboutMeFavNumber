@@ -61,17 +61,23 @@ console.log(sixthQuestion); */
 
 /* This code asks the user to guess my favorite number. The user gets four chances
 and receives feedback after each guess whether the answer is high or low and is told
-whether the guess is correct or failed after four guesses.*/
+whether the guess is correct or failed after four guesses.
+
+I need to ask what is my favorite number.  If the favNumGuess is 52 the game
+should stop.  If the number is too low the user should be told that and asked
+to make another guess.
+
+*/
 
 alert('I just know you are just dying to know my favorite number, but I want you to guess!  You have four chances.');
 
-while(favoriteNum !== 52){
-  var favoriteNum = prompt('What is my favorite number?');
+while(favNumGuess !== 52){
+  var favNumGuess = prompt('What is my favorite number?');
 
-  if (favoriteNum > 52){
-    alert('You guessed: ' + favoriteNum + ', that is too high!');
+  if (favNumGuess > 52){
+    alert('You guessed ' + favNumGuess + ', that is too high!');
   } else if (favoriteNum < 52){
-    alert('You guessed: ' + favoriteNum + ', that is too low!');
+    alert('You guessed ' + favNumGuess + ', that is too low!');
   } else {
     alert('You are correct');
   }

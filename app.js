@@ -1,25 +1,31 @@
 // print to the developer console to makesure javascript is working!
 console.log('javascript is working');
-/*
+
 /* ask the user their name */
-/*var userName = prompt('Thank you for wanting to learn more about me! What is your name?');
+var userName = prompt('Thank you for wanting to learn more about me! What is your name?');
 console.log(userName);
 /* greet the user by name */
-/*alert('Hi ' + userName + ', I have a fun five question yes or no guessing game for you so that you can learn even more about me!');
+alert('Hi ' + userName + ', I have a fun five question yes or no guessing game for you so that you can learn even more about me!');
+/*create a variable to track the number of correct answers*/
+var correctAnswers = 0;
+/*create a variable to track the number of questions*/
+var totalQuestions = 0;
 /* ask the first yes or no question using a prompt*/
-/*var firstQuestion = prompt('Was I born in Renton, Washington? Please answer yes or no.');
+var firstQuestion = prompt('Was I born in Renton, Washington? Please answer yes or no.');
+totalQuestions ++;
 /* put user response in correct format, y to YES, yes to YES, and evaluate if the first question has been answered correctly,*/
-
-/*if(firstQuestion.toUpperCase() === 'Y' || firstQuestion.toUpperCase() === 'YES'){
+if(firstQuestion.toUpperCase() === 'Y' || firstQuestion.toUpperCase() === 'YES'){
   console.log(firstQuestion);
   alert('Yay, you are correct!');
+  correctAnswers ++;
 } else {
   alert('Sorry, you are incorrect.');
 }
-
 var secondQuestion = prompt('Do I have three college educated daughters? Please answer yes or no.');
+totalQuestions ++;
 if(secondQuestion.toUpperCase() === 'Y' || secondQuestion.toUpperCase() === 'YES'){
   alert('Yay, you are correct!');
+  correctAnswers ++;
 } else {
   alert('Sorry, you are incorrect.');
 }
@@ -27,8 +33,10 @@ if(secondQuestion.toUpperCase() === 'Y' || secondQuestion.toUpperCase() === 'YES
 console.log(secondQuestion);
 
 var thirdQuestion = prompt('Do I enjoy wakeskating and karaoke? Please answer yes or no.');
+totalQuestions ++;
 if(thirdQuestion.toUpperCase() === 'Y' || thirdQuestion.toUpperCase() === 'YES'){
   alert('Yay, you are correct!');
+  correctAnswers ++;
 } else {
   alert('Sorry, you are incorrect.');
 }
@@ -36,8 +44,10 @@ if(thirdQuestion.toUpperCase() === 'Y' || thirdQuestion.toUpperCase() === 'YES')
 console.log(thirdQuestion);
 
 var fourthQuestion = prompt('Is my favorite book "Wise Man" by Flannery OConnor? Please answer yes or no.');
+totalQuestions ++;
 if(fourthQuestion.toUpperCase() === 'Y' || fourthQuestion.toUpperCase() === 'YES'){
   alert('Yay, you are correct!');
+  correctAnswers ++;
 } else {
   alert('Sorry, you are incorrect.');
 }
@@ -45,36 +55,33 @@ if(fourthQuestion.toUpperCase() === 'Y' || fourthQuestion.toUpperCase() === 'YES
 console.log(fourthQuestion);
 
 var fifthQuestion = prompt('Did I once own a Suzuki GSXR 1000? Please answer yes or no.');
+totalQuestions ++;
 if(fifthQuestion.toUpperCase() === 'Y' || fifthQuestion.toUpperCase() === 'YES'){
   alert('Yay, you are correct!');
+  correctAnswers ++;
   console.log(fifthQuestion);
   var sixthQuestion = prompt('Because you got that right you get to answer one more question. Is my favorite pie, apple?');
+  totalQuestions ++;
   if(sixthQuestion.toUpperCase() === 'Y' || sixthQuestion.toUpperCase() === 'YES'){
     alert('Yay, you are correct! Thank you for taking the time to learn about me.');
+    correctAnswers ++;
   } else {
     alert('Sorry, you are incorrect. But, thank you for taking the time to learn about me.');
   }
-} else {
-  alert('Sorry, you are incorrect. Thank you for taking the time learn about me.');
 }
-console.log(sixthQuestion); */
+console.log(sixthQuestion);
 
-/* This code asks the user to guess my favorite number. The user gets four chances
+/* This code asks the user to guess a number. The user gets four chances
 and receives feedback after each guess whether the answer is high or low and is told
-whether the guess is correct or failed after four guesses.
+whether the guess is correct or failed after four guesses.*/
 
-I need to ask what is my favorite number.  If the favNumGuess is 52 the game
-should stop.  If the number is too low the user should be told that and asked
-to make another guess.
-
-*/
-
-alert('I want you to guessnumber I wore when I played High School Football. There are four quarters in a game, so you have four chances.');
+alert('Lastly, I want you to guess the jersey number I wore when I played High School football. There are four quarters in a game, so you have four chances.');
 
 var numberOfGuesses = 0;
 
 while (numberGuessed !== 52 && numberOfGuesses < 4){
   var numberGuessed = parseInt(prompt('Guess my football jersey number?'));
+  totalQuestions ++;
   console.log('User guessed' + numberGuessed);
 
   if(Number.isNaN(numberGuessed) === true){
@@ -95,9 +102,11 @@ while (numberGuessed !== 52 && numberOfGuesses < 4){
   } else {
     alert('You guessed correctly, I wore number 52.');
     console.log('User guessed' + numberGuessed);
+    correctAnswers ++;
   }
 }
 
 if (numberOfGuesses === 4 && numberGuessed !== 52){
   alert('Too many guesses.  The clock has ran out.');
 }
+alert('Thank you for playing ' + userName + '.  Out of ' + totalQuestions + ' questions, you answered' + correctAnswers + ' correctly.');

@@ -69,16 +69,35 @@ to make another guess.
 
 */
 
-alert('I just know you are just dying to know my favorite number, but I want you to guess!  You have four chances.');
+alert('I want you to guessnumber I wore when I played High School Football. There are four quarters in a game, so you have four chances.');
 
-while(favNumGuess !== 52){
-  var favNumGuess = prompt('What is my favorite number?');
+var numberOfGuesses = 0;
 
-  if (favNumGuess > 52){
-    alert('You guessed ' + favNumGuess + ', that is too high!');
-  } else if (favoriteNum < 52){
-    alert('You guessed ' + favNumGuess + ', that is too low!');
+while (numberGuessed !== 52 && numberOfGuesses < 4){
+  var numberGuessed = parseInt(prompt('Guess my football jersey number?'));
+  console.log('User guessed' + numberGuessed);
+
+  if(Number.isNaN(numberGuessed) === true){
+    alert('I wore a number on my Jersey. Guess again please');
+    numberOfGuesses++;
+    console.log('User guessed' + numberGuessed);
+
+  } else if (numberGuessed > 52){
+    alert('You guessed high.');
+    numberOfGuesses++;
+    console.log('User guessed' + numberGuessed);
+
+  } else if (numberGuessed < 52){
+    alert('You guessed low.');
+    numberOfGuesses++;
+    console.log('User guessed' + numberGuessed);
+
   } else {
-    alert('You are correct');
+    alert('You guessed correctly, I wore number 52.');
+    console.log('User guessed' + numberGuessed);
   }
+}
+
+if (numberOfGuesses === 4 && numberGuessed !== 52){
+  alert('Too many guesses.  The clock has ran out.');
 }
